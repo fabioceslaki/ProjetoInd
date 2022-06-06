@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajr Jihad | Cadastro</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logotest.jpg" width="100px" height="100px">
+            </div>
+            <ul class="navbar">
+
+                <li>
+                    <a href="index.html"> Inicial </a>
+                </li>
+                <a href="./sobresite.html">Sobre o site</a>
+                </li>
+                <a href="./sobrejihad.html">Sobre o Jihad</a>
+                </li>
+
+                <li>
+                    <a href="./seujihad.html">Meu Jihad</a>
+                </li>
+                <li>|</li>
+
+            </ul>
+            <ul class="buttons">
+                <li class="li_cadastro">
+                    <a href="./cadastro.html"> <button class="btn_cadastro">Cadastro </button></a>
+                </li>
+                <li class="li_login">
+                    <a href="./login.html"> <button class="btn_login">Login</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div id="cadastro">
+
+                <form class="cardcadastro">
+
+                    <div class="card-header">
+
+                        <h2>Cadastro</h2>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-content-area">
+
+                            <label for="usuario">Usuário</label>
+
+                            <input type="text" id="usuario" autocomplete="off">
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <div class="card-content-area">
+
+                                <label for="email">E-mail</label>
+
+                                <input type="text" id="email" autocomplete="off">
+
+                            </div>
+
+                            <div class="card-content-area">
+
+                                <label for="password">Senha</label>
+
+                                <input type="password" id="password" autocomplete="off">
+
+                            </div>
+
+                            <div class="card-content-area">
+
+                                <label for="password">Confirmar senha</label>
+
+                                <input type="password" id="confirma_password" autocomplete="off">
+
+                            </div>
+
+                            <div class="card-content-area">
+
+
+
+                              <label for="check">É muçulmano? <br>
+                                    <input type="radio" class="check" name="chk_islam" value="sim" id="chk_sim" />
+                                    Sim</label>
+                                <label><input type="radio" class="check" name="chk_islam" value="nao" id="chk_nao" />
+                                    Não</label>
+                                <label><input type="radio" class="check" name="chk_islam" value="em processo"
+                                        id="chk_pro" /> Em processo</label>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <input type="button" value="Cadastre-se" class="submit" onclick="cadastrar()">
+
+
+
+                            <a href="login.html" class="">Já tem uma conta? Clique aqui</a>
+
+                        </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <h5>Em nome de Deus, o clemente, o misericordioso.</h5>
+
+            <img src="./assets/star-crescent-icon-18-256.png" width="42px" height="45px">
+
+            <h7>Feito com a dedicação de um aluno SPTech, 2022</h7>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = usuario.value;
+        var emailVar = email.value;
+        var senhaVar = password.value;
+        var confirmacaoSenhaVar = confirma_password.value;
+        var categoriaVar = document.querySelector('input[name="chk_islam"]:checked').value;
+
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || categoriaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            return false;
+        }
+
+        else {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    categoriaServer: categoriaVar
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                console.log("Qlqr")
+
+
+
+                if (resposta.ok) {
+
+                    console.log("limao")
+                    window.location = "login.html";
+
+
+                    // alert("Alerta");
+
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+        }
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

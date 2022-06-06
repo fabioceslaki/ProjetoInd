@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajr Jihad | Login</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logotest.jpg" width="100px" height="100px">
+            </div>
+            <ul class="navbar">
+             
+                <li> 
+                   <a href="index.html">  Inicial </a>
+                </li>
+                    <a href="./sobresite.html">Sobre o site</a>
+                </li>
+                    <a href="./sobrejihad.html">Sobre o Jihad</a>
+            </li>
+                <li>
+                    <a href="./seujihad.html">Meu Jihad</a>
+                </li>
+                <li>|</li>
+
+                </ul>
+                <ul class="buttons">
+
+                    <li class="li_cadastro">
+                       <a href="./cadastro.html"> <button class="btn_cadastro">Cadastro </button></a> 
+                    </li>
+                    <li class="li_login">
+                        <a href="./login.html"> <button class="btn_login">Login</button></a> 
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div id="login">
+
+                <form class="cardlogin">
+    
+                    <div class="card-header">
+    
+                        <h2>Login</h2>
+    
+                    </div>
+    
+                    <div class="card-content">
+    
+                        <div class="card-content-area">
+    
+                            <label for="usuario">Usuário</label>
+    
+                            <input type="text" id="usuario" autocomplete="off">
+    
+                        </div>
+    
+                        <div class="card-content-area">
+    
+                            <label for="password">Senha</label>
+    
+                            <input type="password" id="password" autocomplete="off">
+    
+                        </div>
+
+
+    
+                    </div>
+    
+                    <div class="card-footer">
+    
+                        <button type="submit" value="Entrar" class="submit" onclick="entrar()"><a href="jihadrelato.html"> Entrar</a> </button>
+                        
+    
+                        <a href="cadastro.html" class="">Ainda não tem uma conta? Clique aqui</a>
+    
+                    </div>
+    
+                </form>
+           
+            </div>
+    </div>
+</div>
+</div>
+
+
+              <div class="footer">
+                        <div class="container">
+                            <h5>Em nome de Deus, o clemente, o misericordioso.</h5>
+        
+                            <img src="./assets/star-crescent-icon-18-256.png" width="42px" height="45px">
+        
+                            <h7>Feito com a dedicação de um aluno SPTech, 2022</h7>
+                        </div>
+                    </div>
+          
+</body>
+</html>
+
+<script>
+
+
+    function entrar() {
+        
+
+        var emailVar = usuario.value;
+        var senhaVar = password.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

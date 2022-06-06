@@ -1,0 +1,624 @@
+@font-face {
+    font-family: Emirates;
+    src: url(./assets/Emirates\ Medium.ttf);
+  }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Emirates';
+  background-color:black;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.header {
+  border-bottom: 3px solid #420b25;
+  background-color: #5c0931;
+  background-image: linear-gradient( to left, #1c0610 50%, #420b25 , #660833, #5c0931 );
+}
+
+.header .container {
+  justify-content: space-between;
+  background-color: #5c0931;
+  background-image: linear-gradient( to left, #1c0610 50%, #420b25 , #660833, #5c0931 );
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: white;
+  font-size: 20px;
+}
+
+
+
+.btn_cadastro{
+    width: 140px;
+    height: 40px;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    border: 3px solid #5c0931;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: #420b25;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.btn_login{
+    width: 140px;
+    height: 40px;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    border: 3px solid #5c0931;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: #420b25;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.logo{
+    background-color: #420b25;
+    width: 100px;
+    height: 130px;
+    left: 3rem;
+    position: absolute;
+    width: 100px;
+    height: 125px;
+    z-index: 3;
+}
+
+.buttons {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+  }
+
+  /* BANNER */
+
+  .banner {
+    height: fit-content;
+    padding: 80px 0;
+    color: white;
+    background-size: cover;
+    background-image: url("../assets/mesquitaa.jpg");
+  }
+  
+  .banner .container {
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tamanho-conteudo { 
+    height: fit-content !important;
+  }
+  
+  .banner p {
+    width: 60%;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    font-size: 36px;
+  }
+  
+  .banner .container span {
+    font-weight: 800;
+  }
+
+  /* Os 4 Jihads */
+
+  .social {
+    background-color: #fcf2d7;
+    display: flex;
+    height: fit-content;
+    padding: 80px 0;
+    color: black;
+    background-size: cover;
+    
+  }
+  
+  .social .container{
+        flex-direction: column;
+
+  }
+   
+   h2{
+  display: block;
+  font-size: 3rem;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+   }
+
+  .social p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+
+
+  }
+  .box img {
+    width: 170px;
+  }
+  
+  .container .boxes {
+    display: flex;
+  }
+  
+  .social p {
+    text-align: initial;
+  }
+  
+  .box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5c0931;
+    background-image: linear-gradient( to left, #1c0610 10%, #420b25 , #660833, #5c0931 );
+    height: 200px;
+    border-radius: 5%;
+    width: 500px;
+  }
+
+  .box p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: 'Emirates';
+  font-size: medium;
+  }
+  
+  
+  .box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+  }
+
+  /* Diagrama de negócio */
+
+  .diagrama{
+  background-color:#5c0931;
+  background-image: linear-gradient( to left, #1c0610 50%, #420b25 , #660833, #5c0931 );
+  display: flex;
+  height: fit-content;
+  padding: 80px 0;
+  color: black;
+  background-size: cover;
+  }
+
+  .diagrama .container{
+    flex-direction: column;
+
+}
+
+h3{
+display: block;
+font-size: 3rem;
+margin-block-start: 0.83em;
+margin-block-end: 0.83em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold;
+color: white
+}
+
+.diagrama p {
+display: block;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 1.5rem;
+
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: black;
+    height: 70px;
+    color: black;
+    display: flex;
+    font-size: 15px;
+
+  }
+  
+  .footer .container {
+    justify-content: space-between;
+  }
+
+  h5{
+    display: block;
+    font-size:medium;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: white;
+  }
+
+  h7{
+    display: block;
+    font-size: medium;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: white;
+}
+
+.fotoeu{
+    display: flex;
+    justify-content: center;
+    border-radius: 90%;
+}
+
+/* CADASTRO */
+
+body {
+
+  padding: 0;
+
+  margin: 0;
+
+  background-color: #454d6b;
+
+  border-radius: 5%;
+
+}
+
+#login {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 100vh;
+
+
+}
+
+.cardcadastro {
+
+  background-color:#5c0931;
+
+  padding: 40px;
+
+  border-radius: 10px;
+
+  width:280px;
+
+  height: 720px;
+
+  opacity: 0.8;
+
+
+
+}
+
+.cardlogin {
+
+  background-color:#5c0931;
+
+  padding: 40px;
+
+  border-radius: 10px;
+
+  width:280px;
+
+  height: 500px;
+
+  opacity: 0.8;
+
+
+
+}
+
+.card-header {
+
+  padding-bottom: 50px;
+
+  color: #fff;
+
+}
+
+.card-header::after {
+
+  content: "";
+
+  width: 70px;
+
+  height: 1px;
+
+  background-color: #fff;
+
+  display: block;
+
+  margin-top: -17px;
+
+  margin-left: -5px;
+
+}
+
+.card-content label {
+
+  color: #fff;
+
+  font-size: 20px;
+
+ 
+
+}
+
+.card-content-areajihad {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:10px 0;
+
+  height: 300px;
+
+}
+
+.card-content-area input {
+
+  margin-top: 10px;
+
+  padding:0 5px;
+
+  background-color: transparent;
+
+  border:none;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  outline: none;
+
+  color: #fff;
+
+}
+
+.card-footer {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.card-footer .submit{
+
+  width: 100%;
+
+  height: 40px;
+
+  background-color: #a13854;
+
+  border:none;
+
+  color:#e1e1e1;
+
+  margin: 10px 0;
+
+  font-family: 'Emirates';
+
+  font-size: 30px;
+
+  border-radius: 10px;
+
+}
+
+.card-footer a {
+
+  text-align: center;
+
+  font-size: 20px;
+
+  
+
+  color: #fff;
+
+  text-decoration: none;
+
+}
+
+.cardjihad{
+  background-color:#5c0931;
+
+  padding: 40px;
+
+  border-radius: 10px;
+
+  width:1000px;
+
+  height: 550px;
+
+  opacity: 0.8;
+}
+
+.card-content-areajihad{
+  display: flex;
+
+  flex-direction: column;
+
+  padding:10px 0;
+
+
+}
+
+.card-content-areajihadmei{
+  display: flex;
+
+  flex-direction: column;
+
+  padding:10px 0;
+
+  justify-content: center;
+
+}
+
+.dash{
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Quicksand_Book;
+}
+
+.dash .container {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.painel1{
+  background-color: #8f0101;
+  height: 50px;
+  border-radius: 10px;
+  justify-content: center;
+  justify-items: center;
+  opacity: 0.8;
+  
+
+}
+
+.painel2{
+  background-color: #d1d102;
+  height: 50px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.painel3{
+  background-color: #0a00c2;
+  height: 50px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.painel4{
+  background-color: #555563;
+  height: 50px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.painel5{
+  background-color:#5c0931;
+  height: 50px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.titulo_resultado{
+  font-size:30px;
+  color: white;
+  justify-self: center;
+}
+
+.banner_core{
+  height: fit-content;
+  padding: 80px 0;
+  color: white;
+  background-size: cover;
+  background-image: url("../assets/pray22.jpg");
+}
+
+.banner_lingua{
+  height: fit-content;
+  padding: 80px 0;
+  color: white;
+  background-size: cover;
+  background-image: url("../assets/conhecimento.jpg");
+}
+
+.banner_mao{
+  height: fit-content;
+  padding: 80px 0;
+  color: white;
+  background-size: cover;
+  background-image: url("../assets/arte.jpg");
+}
+
+.banner_espada{
+  height: fit-content;
+  padding: 80px 0;
+  color: white;
+  background-size: cover;
+  background-image: url("../assets/warriors.jpg");
+}
+
+.btn_validar{
+  border-radius: 5px;
+  height: 50px;
+  width: 300px;
+  background-color:#660833;
+  color: #e1e1e1;
+  font-family: 'Emirates';
+  font-size: x-large;
+}
+
+.painel6{
+  background-color: black;
+  height: 500px;
+  border-radius: 10px;
+  opacity: 0.8;
+  background-size: cover;
+}
+
+
+

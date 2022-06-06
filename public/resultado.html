@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajr Jihad | Resultado</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logotest.jpg" width="100px" height="100px">
+            </div>
+            <ul class="navbar">
+             
+                <li> 
+                   <a href="index.html">  Inicial </a>
+                </li>
+                    <a href="./sobresite.html">Sobre o site</a>
+                </li>
+                <li class="agora">
+                    <a href="./sobrejihad.html">Sobre o Jihad</a>
+                </li>
+            
+                <li>
+                    <a href="./seujihad.html">Meu Jihad</a>
+                </li>
+                <li>|</li>
+
+                </ul>
+                <ul class="buttons">
+                <li class="li_cadastro">
+                   <a href="./cadastro.html"> <button class="btn_cadastro">Cadastro </button></a> 
+                </li>
+                <li class="li_login">
+                    <button class="btn_login" href="./cadastro.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+            <div class="diagrama">
+                <div class="container">
+                   
+                   <div class="painel1">
+                    <h9 class="titulo_resultado" id="pt_coracao">
+                        Jihad   
+                        do coração  | Pontuação: 
+                    </h9>
+                   </div>
+                   <br>
+                   <div class="painel2">
+                    <h9 class="titulo_resultado" id="pt_mao">
+                        Jihad   
+                        da mão  |  Pontuação: 
+                    </h9>
+                   </div>
+                   <br>
+                   <div class="painel3">
+                    <h9 class="titulo_resultado" id="pt_lingua">
+                        Jihad   
+                        da lingua  | Pontuação:
+                    </h9>
+                   </div>
+                   <br>
+                   <div class="painel4">
+                    <h9 class="titulo_resultado" id="pt_espada">
+                        Jihad   
+                        da espada  | Pontuação:
+                    </h9>
+                   </div>
+                   <br>
+                   <div class="painel5">
+                    <h9 class="titulo_resultado" id="pt_total">
+                        Resultado total  | Pontuação:
+                    </h9>
+                   </div>
+
+                    </div>
+                </div>
+                
+                <div class="social">
+                    <div class="container">
+                    <h9 class="titulo_resultado" id="div_mensagem" style="color:black">
+                        
+                    </h9>
+                   </div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+              
+                    
+                    <div class="footer">
+                        <div class="container">
+                            <h5>Em nome de Deus, o clemente, o misericordioso.</h5>
+        
+                            <img src="./assets/star-crescent-icon-18-256.png" width="42px" height="45px">
+        
+                            <h7>Feito com amor e dedicação de um aluno SPTech, 2022</h7>
+                        </div>
+                    </div>
+
+            
+    
+</body>
+</html>
+
+<script>
+    var li_pontos_por_categoria =  localStorage.getItem("sessionResult");
+    var li_pontos_por_total = localStorage.getItem("sessionResult2")
+    
+    div_mensagem.style.display = "none"
+
+   pt_mao.innerHTML =  `Jihad da mão  |  Pontuação: ${li_pontos_por_categoria.split(",")[3]}`
+   pt_coracao.innerHTML =  `Jihad do coração  |  Pontuação: ${li_pontos_por_categoria.split(",")[0]}`
+   pt_lingua.innerHTML =  `Jihad da lingua  |  Pontuação: ${li_pontos_por_categoria.split(",")[2]}`
+   pt_espada.innerHTML =  `Jihad da espada |  Pontuação: ${li_pontos_por_categoria.split(",")[1]}`
+
+   pt_total.innerHTML =  `Pontuação total |  Pontuação: ${li_pontos_por_total}`
+
+   if(li_pontos_por_total <= 200){
+       div_mensagem.style.display = "block"
+       div_mensagem.innerHTML = "Quando vamos em direção as nossas dificuldades, Allah as afasta e aumenta nossa determinação, permaneça firme!... <br> (Sua pontuação foi baixa, mas não se desanime, pois é nas dificuldades que encontramos força)"
+   } else if (li_pontos_por_total > 200 && li_pontos_por_total<= 300) {
+    div_mensagem.style.display = "block"
+       div_mensagem.innerHTML = "E vai em direção a glória, com coragem, e trás um fim as tribulações... <br> (Você com certeza pode melhorar, pois Allah, é dos capacitadores, o maior!)"
+   } else if (li_pontos_por_total > 300 && li_pontos_por_total<= 400) {
+    div_mensagem.style.display = "block"
+       div_mensagem.innerHTML = "Afiado como a espada, o vento, a onda, forte como o cavalo, o leão, o trovão cintilante... <br> (Você está cada vez mais firme em direção a senda reta! Ótima pontuação)"
+   }
+   else {
+    div_mensagem.style.display = "block"
+       div_mensagem.innerHTML = "Ó meu velho companheiro, vamos! Pela causa nós marchamos, seguindo os passos da senda reta!... <br> (Você atingiu a pontuação máxima, você é um verdadeiro guerreiro, mas lembre-se : O Jihad permanece até o fimde nossas vidas!)"
+   }
+</script>
